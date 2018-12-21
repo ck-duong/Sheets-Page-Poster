@@ -8,7 +8,7 @@ pip instsall gspreads
 pip install facebook-sdk
 
 For access to the Google Sheets spreadsheet:
-1. Go to Google API Console (https://console.developers.google.com/apis?project=ckd1-226206)
+1. Go to Google API Console (https://console.developers.google.com/)
 2. Make/Access Google API Project
 3. Enable Google Drive/Google Sheets API
 4. Create credentials for a Web Server to access Application Data
