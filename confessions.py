@@ -1,5 +1,6 @@
 import gspread
 import facebook
+import sys
 from oauth2client.service_account import ServiceAccountCredentials
 
 scope = ['https://www.googleapis.com/auth/drive']
@@ -11,7 +12,7 @@ client = gspread.authorize(credentials)
 # Stand in Google Sheets file name, spreadsheet with three rows: Confession, Number, Posted Status
 sheet = client.open('TestData').sheet1
 
-token = '' #Stand in, paste user access token here
+token = sys.argv[1]
 graph = facebook.GraphAPI(access_token=token)
 
 baseCon = 8500  # Base post number in case the confession count resets/no access to previous confession number
@@ -23,8 +24,7 @@ def post(entryNumber):  # Posts unposted entries onto the Facebook page
             posting = '#' + str(sheet.cell(entryNumber, 2).value) + \
                 ': ' + '"' + sheet.cell(entryNumber, 1).value + '"'
             sheet.update_cell(entryNumber, 3, 'Posted')  # Update Posted Status
-            graph.put_object(parent_object='me',
-                             connection_name='feed', message=posting)  # Post
+            graph.put_object(parent_object='me', connection_name='feed', message=posting)  # Post
 
 
 for i in range(2, sheet.row_count):  # Go through all rows
