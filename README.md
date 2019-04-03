@@ -13,8 +13,8 @@ For access to the Google Sheets spreadsheet:
 3. Enable Google Drive/Google Sheets API
 4. Create credentials for a Web Server to access Application Data
 5. Give service account the role of Project Editor or Owner
-6. Download JSON key, copy to your code directory, rename as 'credentials.json' for convenience
-7. Open credentials.json, share editing access to the "client-email" in the file (should take the place of the provided credentials.json)
+6. Download JSON key, copy to your code directory
+7. Open client-secret.json, share editing access to the "client-email" in the file (should take the place of the provided credentials.json)
 8. Paste spreadsheet name where indicated in confessions.py
 
 To get Facebook user access key:
@@ -24,4 +24,4 @@ To get Facebook user access key:
 4. Create an app
 5. Grant manage_pages, publish_pages permissions
 6. Get User/Page access tokens (depending on who you want to post as)
-7. Paste into confessions.py where indicated
+7. Enter token when running confessions.py
